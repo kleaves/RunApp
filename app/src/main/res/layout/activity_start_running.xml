@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartRunning">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_mapview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl">
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true" />
+
+            <RelativeLayout
+                android:id="@+id/progressBarRl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:visibility="gone"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@android:color/black"
+                    android:text="GPS信号连接中，请稍后..." />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:paddingLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="10dp"
+                    android:layout_toLeftOf="@id/info" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_alignParentBottom="true"
+            android:background="#fff">
+
+            <ImageView
+                android:id="@+id/iv_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bottom"/>
+
+            <TextView
+                android:id="@+id/sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_bottom"
+                android:layout_centerHorizontal="true"
+                android:text="0.00"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公里"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/sum"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="42dp"/>
+
+            <TextView
+                android:id="@+id/yunding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运动时间"
+                android:layout_below="@+id/sum"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="26dp"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textSize="22sp"
+                android:layout_below="@+id/yunding"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:id="@+id/peisu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sum"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="配速"/>
+
+            <TextView
+                android:id="@+id/speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/peisu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:text="0.00"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消耗热量"
+                android:layout_below="@+id/sum"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="34dp" />
+
+            <TextView
+                android:id="@+id/kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="22sp"
+                android:layout_below="@+id/yunding"
+                android:layout_marginRight="2dp"
+                android:layout_toLeftOf="@+id/qk"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:id="@+id/qk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="千卡"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="26dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/yunding"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/buttonMileage"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/btn_circular_green"
+                    android:visibility="invisible"
+                    android:text="继续" />
+
+                <Button
+                    android:id="@+id/buttonPause"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/btn_circular_red"
+                    android:text="暂停" />
+
+                <Button
+                    android:id="@+id/buttonFinish"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/btn_circular_red"
+                    android:visibility="invisible"
+                    android:text="结束" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundBlue">
+
+        <TextView
+            android:id="@+id/count_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:textSize="130sp"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</FrameLayout>

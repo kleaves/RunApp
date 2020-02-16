@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:background="#FFFFFFFF"
+    android:layout_height="62dp"
+    android:id="@+id/desc_rl">
+
+    <ImageView
+        android:id="@+id/iii"
+        android:layout_width="wrap_content"
+        android:layout_height="88dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        app:srcCompat="@drawable/run" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iii"
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="公里"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/km">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/km"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/time" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间"
+                android:textSize="14sp"
+                android:layout_marginLeft="2dp"
+                android:layout_below="@+id/km"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/km"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/speed" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="14sp"
+            android:text="配速" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="月/日"
+        android:layout_centerVertical="true"
+        android:textSize="12sp"
+        android:layout_marginRight="6dp"
+        android:layout_toLeftOf="@+id/right"/>
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:paddingRight="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/right" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:background="#BCBCBC" />
+</RelativeLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RunOver">
+
+    <RelativeLayout
+        android:id="@+id/rl_mapview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
+        <RelativeLayout
+            android:id="@+id/progressBarRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:visibility="gone"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/black"
+                android:text="GPS信号连接中，请稍后..." />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:paddingLeft="20dp"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp"
+                android:layout_toLeftOf="@id/info" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_bottom"
+            android:layout_centerHorizontal="true"
+            android:text="0.00"
+            android:textSize="48sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公里"
+            android:textSize="18sp"
+            android:layout_toRightOf="@+id/sum"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/yunding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="运动时间"
+            android:layout_below="@+id/sum"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="26dp"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00"
+            android:textSize="22sp"
+            android:layout_below="@+id/yunding"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/peisu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sum"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="配速"/>
+
+        <TextView
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/peisu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:text="--"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消耗热量"
+            android:layout_below="@+id/sum"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="34dp" />
+
+        <TextView
+            android:id="@+id/kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="22sp"
+            android:layout_below="@+id/yunding"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@+id/qk"
+            android:layout_marginTop="6dp"/>
+
+        <TextView
+            android:id="@+id/qk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="千卡"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/yunding"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/btn_rectangle_white"
+                android:textSize="18sp"
+                android:text="关 闭" />
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="#fff"
+                android:background="@drawable/btn_rectangle_green"
+                android:textSize="18sp"
+                android:text="分 享" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

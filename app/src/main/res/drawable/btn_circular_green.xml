@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+<!--            四个角的半径-->
+            <solid android:color="#00d65a"/>
+<!--            圆的颜色-->
+            <corners android:radius="90dip"/>
+<!--            控制圆的大小，如果没有此行，正圆变椭圆-->
+            <size android:width="170dp" android:height="170dp"/>
+        </shape>
+    </item>
+</layer-list>
