@@ -82,7 +82,7 @@
                 android:textSize="18sp"
                 android:layout_toRightOf="@+id/sum"
                 android:layout_marginLeft="6dp"
-                android:layout_marginTop="42dp"/>
+                android:layout_marginTop="72dp"/>
 
             <TextView
                 android:id="@+id/yunding"
